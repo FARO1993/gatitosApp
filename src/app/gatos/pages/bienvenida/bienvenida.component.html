@@ -1,0 +1,66 @@
+
+<div style="margin-top: 3%; padding-right: 3%;" 
+     fxLayout="column" 
+     fxFlex="100"
+     fxLayoutAlign.xs="center center">
+<h1 style="text-align: center; font-size: 60px;" class="welcome_title">Bienvenidos</h1>
+<p style="margin-top: 3%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non necessitatibus ab libero voluptatem. Nobis nisi necessitatibus iste architecto voluptatem eligendi? Pariatur harum hic placeat, consectetur quam molestiae itaque voluptate.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil rem mollitia, aliquid sunt animi assumenda id delectus recusandae aspernatur magni iusto officia minus magnam cumque eaque sequi! Dolor, beatae est!
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores natus, atque unde eius distinctio est quis quas. Eligendi reiciendis consequatur id beatae, sequi voluptate maxime nihil illo expedita quae blanditiis?</p>
+<mat-divider></mat-divider>
+<br>
+<br>
+
+<h2 class="welcome_title">{{(isBetty) ? "Beatriz" : "Abel" }}</h2>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed necessitatibus libero reprehenderit error pariatur animi doloribus aliquam dignissimos porro culpa quae deleniti nemo placeat voluptates, tempora eius iste. Accusantium, delectus!
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed necessitatibus libero reprehenderit error pariatur animi doloribus aliquam dignissimos porro culpa quae deleniti nemo placeat voluptates, tempora eius iste. Accusantium, delectus!
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed necessitatibus libero reprehenderit error pariatur animi doloribus aliquam dignissimos porro culpa quae deleniti nemo placeat voluptates, tempora eius iste. Accusantium, delectus!
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed necessitatibus libero reprehenderit error pariatur animi doloribus aliquam dignissimos porro culpa quae deleniti nemo placeat voluptates, tempora eius iste. Accusantium, delectus!
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed necessitatibus libero reprehenderit error pariatur animi doloribus aliquam dignissimos porro culpa quae deleniti nemo placeat voluptates, tempora eius iste. Accusantium, delectus!
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed necessitatibus libero reprehenderit error pariatur animi doloribus aliquam dignissimos porro culpa quae deleniti nemo placeat voluptates, tempora eius iste. Accusantium, delectus!
+</p>
+<br>
+<br>
+
+</div>
+<div fxLayout="row" fxFlex="50">
+  <mat-card style="border-radius: 5%; margin-top: 3%; position:relative" class="mat-elevation-z8">
+    <mat-card-title class="welcome_title">{{(isBetty) ? "Beatriz" : "Abel" }}</mat-card-title>
+    <div style="margin-top: 3%;" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+          <button mat-raised-button color="primary" (click)="catChange()">{{(isBetty) ? "Cambiar Abel" : "Cambiar Betty" }}</button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active visually-hidden" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="visually-hidden" aria-label="Slide 2"></button>
+      </div>
+
+      <!-- Si es Betty -->
+      <div *ngIf="isBetty" style="border-radius:5%;" class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/betty.jpeg" class="d-block w-100" alt="betty1">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/betty2.jpg" class="d-block w-100" alt="betty2">
+        </div>
+      </div>
+
+      <!-- Si es Abel -->
+      <div *ngIf="!isBetty" style="border-radius:5%;" class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/abel.jpg" class="d-block w-100" alt="betty1">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/abel2.jpg" class="d-block w-100" alt="betty2">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </mat-card>
+</div>
+

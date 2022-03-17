@@ -1,0 +1,62 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+
+        <mat-toolbar>
+            <span>Menú</span>
+            <!-- spacer: Clase para el espacio -->
+            <span class="spacer"></span>
+            <button mat-icon-button
+                    (click)="sidenav.toggle()">
+                <mat-icon>format_align_justify</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="./bienvenida"
+               mat-list-item
+               (click)="sidenav.toggle()">
+               <mat-icon mat-list-icon>home</mat-icon>
+                <span>Inicio</span>
+            </a>
+
+            <a routerLink="./listado"
+               mat-list-item
+               (click)="sidenav.toggle()">
+               <mat-icon mat-list-icon>list</mat-icon>
+                <span>Razas de Gatos</span>
+            </a>
+
+            <a routerLink="./buscar"
+               mat-list-item
+               (click)="sidenav.toggle()">
+               <mat-icon mat-list-icon>search</mat-icon>
+                <span>Buscar Gato</span>
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-toolbar>
+        <button mat-icon-button
+                (click)="sidenav.toggle()">
+            <mat-icon>format_align_justify</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <!-- spacer: Clase para el espacio -->
+        <h1 style="margin: 0 auto" class="title">GatitosApp</h1>
+
+        <!-- spacer: Clase para el espacio -->
+        <span class="spacer"></span>
+        <span style="margin-right: 3%;">{{ auth?.usuario }}</span>
+        <button mat-button
+                (click)="logout()">
+            Logout
+        </button>
+    </mat-toolbar>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    
+</mat-sidenav-container>
+
