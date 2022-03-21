@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { Gato } from '../../interfaces/gato.interface';
 import { GatosService } from '../../services/gatos.service';
 
@@ -35,7 +36,8 @@ export class ListadoComponent implements OnInit{
   pageSizeOptions: number[] = [5,10,25]
   isActive: boolean = false;
 
-  constructor( private gatosService: GatosService) { }
+  constructor( private gatosService: GatosService,
+               private router: Router ) { }
 
   ngOnInit(): void{
     this.gatosService.getAllBreeds().subscribe( gatos => {

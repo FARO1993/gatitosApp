@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
@@ -21,7 +21,7 @@ export class AuthGuard implements CanLoad, CanActivate {
         return false;
       }*/
 
-      return this.authService.verificarAuth()
+/*      return this.authService.verificarAuth()
                              .pipe(
                                tap( isAuth => {
                                  if ( !isAuth ){
@@ -51,5 +51,5 @@ export class AuthGuard implements CanLoad, CanActivate {
         console.log("bloqueado por el canLoad")
         return false;
       }*/
-  }
-}
+  /*}
+}*/

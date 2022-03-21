@@ -40,7 +40,8 @@
             </mat-card-content>
 
             <mat-card-actions>
-                <button mat-icon-button color="warn">
+                <button [routerLink]="['/gatos/raza/', gato.id]"
+                        mat-icon-button color="warn">
                     <mat-icon>favorite</mat-icon>
                     Ver más...
                   </button>

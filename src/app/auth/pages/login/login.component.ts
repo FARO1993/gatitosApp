@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -37,4 +37,4 @@ export class LoginComponent {
     this.router.navigate(["./gatos/bienvenida"])
   }
 
-}
+}*/

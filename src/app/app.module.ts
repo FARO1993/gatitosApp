@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
-import { AuthModule } from './auth/auth.module';
+/*import { AuthModule } from './auth/auth.module';*/
 import { GatosModule } from './gatos/gatos.module';
 
 //Cambiar el locale de la app
@@ -26,7 +26,7 @@ registerLocaleData( localeEs );
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AuthModule,
+ /*   AuthModule,*/
     GatosModule,
     HttpClientModule,
     FlexLayoutModule

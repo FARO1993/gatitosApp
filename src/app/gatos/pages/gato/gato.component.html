@@ -1,2 +1,41 @@
+<div fxLayout="column" 
+     fxLayoutAlign="center center"
+     style="margin-top: 3%">
 
+     <mat-spinner *ngIf="loading"></mat-spinner>
 
+    <h1>{{ gatoSelected?.name }}</h1>
+    <div *ngIf="!loading">
+        <img class="image_resolution mat-elevation-z8" [src]="gatoImage" alt="catImage">
+    </div>
+    <!-- Material Chip -->
+    <div *ngIf="!loading" style="margin-top: 3%;">
+        <mat-chip-list>
+            <mat-chip>
+                {{ gatoSelected?.origin}}
+            </mat-chip>
+            <mat-chip *ngIf="gatoSelected?.experimental == 1">Experimental</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.rex == 1">Rex</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.natural == 1">Natural</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.rare == 1">Rare</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.hairless == 1">Hairless</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.suppressed_tail == 1">Suppressed Tail</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.short_legs == 1">Short Legs</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.hypoallergenic == 1">Hypoallergenic</mat-chip>    
+          </mat-chip-list>   
+    </div>
+    <br>
+    <br>
+    <!-- Cat description -->
+    <div>
+        <p class="cat_description" >{{ gatoSelected?.description }}</p>
+    </div>
+    <br>
+    <br>
+    <!-- Temperament -->
+    <div>
+        <mat-chip-list>
+            <mat-chip> {{ gatoSelected?.temperament }} </mat-chip>
+        </mat-chip-list>
+    </div>
+</div>

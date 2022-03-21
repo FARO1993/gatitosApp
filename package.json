@@ -26,6 +26,8 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.2",
     "@types/popper.js": "^1.11.0",
+    "flag-icon-css": "^4.1.7",
+    "flag-icons": "^6.1.1",
     "ng-image-slider": "^2.8.0",
     "ngx-image-zoom": "^0.6.0",
     "ngx-owl-carousel-o": "^7.0.1",

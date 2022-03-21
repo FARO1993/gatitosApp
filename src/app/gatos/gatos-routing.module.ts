@@ -22,7 +22,7 @@ const routes: Routes = [
         component: BuscarComponent
       },
       {
-        path: 'gato/:id',
+        path: 'raza/:id',
         component: GatoComponent
       },
       {
