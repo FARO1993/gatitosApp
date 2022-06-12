@@ -1,1 +1,71 @@
-<p>registro works!</p>
+
+<form fxLayout="column" 
+     fxLayoutAlign="center center"
+     style="padding: 40px;"
+     [formGroup]="miFormulario"
+     (ngSubmit)="registrar()">
+    <mat-card-header>
+        <mat-card-title style="font-size: 39px;">
+            Crear Usuario
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="padding-top: 20px;">
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field class="auth-input">
+                            <input matInput
+                                   placeholder="Ingrese su usuario..."
+                                   formControlName="name">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="auth-input">
+                            <input matInput 
+                                   placeholder="Ingrese su Email..."
+                                   formControlName="email">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="auth-input">
+                            <input matInput 
+                                   placeholder="Ingrese su contraseña..." 
+                                   type="password"
+                                   formControlName="password">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4 style="padding-top: 15px">¿Te gustan los gatitos?</h4>
+                        <p>
+                            <mat-checkbox color="primary">
+                                Si
+                            </mat-checkbox>
+                        </p>
+                        <p>
+                            <mat-checkbox color="primary">
+                                No
+                            </mat-checkbox>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        <!-- <mat-spinner></mat-spinner> -->
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="auth-button"
+                    mat-raised-button 
+                    color="primary"
+                    type="submit">
+                    Registrar
+            </button>
+        </mat-card-actions>
+
+        <span>¿Ya tienes una cuenta?</span>
+        <a routerLink="/auth/login">Ingresar</a>
+</form>

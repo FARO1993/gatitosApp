@@ -1,13 +1,19 @@
-<mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav mode="push">
+<mat-sidenav-container style="background: none;" 
+                       fullscreen>
+    <mat-sidenav #sidenav 
+                 style="background: black;" 
+                 mode="push">
 
-        <mat-toolbar>
+        <mat-toolbar style="background: none;">
             <span>Menú</span>
             <!-- spacer: Clase para el espacio -->
             <span class="spacer"></span>
-            <button mat-icon-button
+            <button mat-mini-fab
+                    color="primary"
                     (click)="sidenav.toggle()">
-                <mat-icon>format_align_justify</mat-icon>
+                    <span class="material-icons">
+                        close
+                    </span>
             </button>
         </mat-toolbar>
 
@@ -15,43 +21,57 @@
             <a routerLink="./bienvenida"
                mat-list-item
                (click)="sidenav.toggle()">
-               <mat-icon mat-list-icon>home</mat-icon>
+               <mat-icon mat-list-icon
+                         color="primary">
+                         home
+                </mat-icon>
                 <span>Inicio</span>
             </a>
 
             <a routerLink="./listado"
                mat-list-item
                (click)="sidenav.toggle()">
-               <mat-icon mat-list-icon>list</mat-icon>
+               <mat-icon mat-list-icon
+                         color="primary">
+                         list
+                </mat-icon>
                 <span>Razas de Gatos</span>
             </a>
 
             <a routerLink="./buscar"
                mat-list-item
                (click)="sidenav.toggle()">
-               <mat-icon mat-list-icon>search</mat-icon>
+               <mat-icon mat-list-icon
+                         color="primary">
+                         search
+                </mat-icon>
                 <span>Buscar Gato</span>
             </a>
 
         </mat-nav-list>
 
     </mat-sidenav>
-    <mat-toolbar>
-        <button mat-icon-button
+    <mat-toolbar fxLayout="row" 
+                 fxLayoutAlign="space-between center" 
+                 style="background: none;">
+        <div fxLayout="row"
+             fxLayoutAlign="center center">
+            <button mat-mini-fab 
+                color="primary" 
                 (click)="sidenav.toggle()">
-            <mat-icon>format_align_justify</mat-icon>
-        </button>
-        <span class="spacer"></span>
-        <!-- spacer: Clase para el espacio -->
-        <h1 style="margin: 0 auto" class="title">GatitosApp</h1>
-
-        <!-- spacer: Clase para el espacio -->
-        <span class="spacer"></span>
-        <span style="margin-right: 3%;">{{ auth?.usuario }}</span>
-        <button mat-button
-                (click)="logout()">
-            Logout
-        </button>
+                <mat-icon>format_align_justify</mat-icon>
+            </button>
+                <h1 class="title">Gatitos App</h1>
+        </div>
+            
+        <div>
+            <span style="margin-right: 10px;">Usuario</span>
+            <button mat-stroked-button 
+                    color="primary"
+                    (click)="logout()">
+                Logout
+            </button>
+        </div>
     </mat-toolbar>
 
     <div class="container">

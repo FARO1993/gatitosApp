@@ -9,22 +9,41 @@ import { GatosService } from '../../services/gatos.service';
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styles: [`
+
+    h1 {
+      font-size: 60px !important;
+      margin-bottom: 30px
+    }
+
     .img{
       height: 200px
     }
-    h1{
-      font-size: 60px !important;
-      font-family: 'Dancing Script', cursive;
-      margin: 2% !important;
+
+    .welcome_title{
       text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 40px;
+      margin-top: 50px
     }
 
-    @media (max-width: 600px) {
-    h1 {
-      font-size: 40px !important;
-      margin: 3% !important;
+    mat-card {
+      margin-top: 20px; 
+      background: black;
+      border: 1px solid #ff4082;
     }
-}
+
+    mat-card:hover {
+      box-shadow: 0 0 20px #ff4082;
+    }
+
+    mat-card-title {
+      font-size: 17px !important;
+      font-weight: 700
+    }
+
+    ::ng-deep .mat-card-header-text {
+    margin: 0px !important;
+    }
   `]
 })
 export class ListadoComponent implements OnInit{
@@ -40,10 +59,14 @@ export class ListadoComponent implements OnInit{
                private router: Router ) { }
 
   ngOnInit(): void{
+    this.findCats()
+  }
+
+  async findCats() {
     this.gatosService.getAllBreeds().subscribe( gatos => {
-    this.gatosList = gatos;
-    this.loading = false;
-    })
+      this.gatosList = gatos;
+      this.loading = false;
+      })
   }
 
   onPageActivated(event: PageEvent){

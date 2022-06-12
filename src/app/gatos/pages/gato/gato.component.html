@@ -1,10 +1,9 @@
 <div fxLayout="column" 
-     fxLayoutAlign="center center"
-     style="margin-top: 3%">
+     fxLayoutAlign="center center">
 
      <mat-spinner *ngIf="loading"></mat-spinner>
 
-    <h1>{{ gatoSelected?.name }}</h1>
+    <h1 class="welcome_title">{{ gatoSelected?.name }}</h1>
     <div *ngIf="!loading">
         <img class="image_resolution mat-elevation-z8" [src]="gatoImage" alt="catImage">
     </div>
@@ -14,7 +13,9 @@
             <mat-chip>
                 {{ gatoSelected?.origin}}
             </mat-chip>
-            <mat-chip *ngIf="gatoSelected?.experimental == 1">Experimental</mat-chip>
+            <mat-chip *ngIf="gatoSelected?.experimental == 1">
+                Experimental
+            </mat-chip>
             <mat-chip *ngIf="gatoSelected?.rex == 1">Rex</mat-chip>
             <mat-chip *ngIf="gatoSelected?.natural == 1">Natural</mat-chip>
             <mat-chip *ngIf="gatoSelected?.rare == 1">Rare</mat-chip>
@@ -38,4 +39,125 @@
             <mat-chip> {{ gatoSelected?.temperament }} </mat-chip>
         </mat-chip-list>
     </div>
+    <br>
+    <br>
 </div>
+<mat-divider></mat-divider>
+<br>
+<br>
+    <!-- Other -->
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Affection Level</strong></h4>
+        <div *ngFor="let images of affectionLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Adaptability</strong></h4>
+        <div *ngFor="let images of adaptabilityLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Child Friendly</strong></h4>
+        <div *ngFor="let images of childFriendlyLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Dog Friendly</strong></h4>
+        <div *ngFor="let images of dogFriendlyLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Energy Level</strong></h4>
+        <div *ngFor="let images of energyLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Grooming</strong></h4>
+        <div *ngFor="let images of groomingLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Health Issues</strong></h4>
+        <div *ngFor="let images of healthIssuesLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Intelligence</strong></h4>
+        <div *ngFor="let images of intelligenceLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Shedding Level</strong></h4>
+        <div *ngFor="let images of sheddingLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Social Needs</strong></h4>
+        <div *ngFor="let images of socialNeedsLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Stranger Friendly</strong></h4>
+        <div *ngFor="let images of strangerFriendlyLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center">
+        <h4><strong>Vocalisation</strong></h4>
+        <div *ngFor="let images of vocalisationLevel">
+            <img class="image_point" [src]="images">
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div fxLayout="row"  fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-raised-button color="primary" (click)="irAWikipedia()">Ver en Wikipedia</button>
+        <button mat-raised-button color="accent" (click)="volver()">Volver</button>
+    </div>
+    <br>
+    <br>
+

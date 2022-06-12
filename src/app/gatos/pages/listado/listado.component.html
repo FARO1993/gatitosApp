@@ -1,5 +1,7 @@
 
-<h1 style="margin-top: 1%; margin-left: 1%;">Razas de Gatos</h1>
+<h1 class="welcome_title">
+    Razas de Gatos
+</h1>
 <mat-divider></mat-divider>
 <br>
 
@@ -15,9 +17,9 @@
          fxFlex.sm="30"
          *ngFor="let gato of gatosList | paginator: pageSize:pageNUmber">
 
-         <mat-card class="mat-elevation-z8" style="margin-top: 20px;">
+         <mat-card class="mat-elevation-z8">
           
-            <mat-card-header>
+            <mat-card-header style="text-align: start; margin: 0;">
                 <mat-card-title>{{ gato.name }}</mat-card-title>
                 <mat-card-subtitle>{{ gato.origin }}</mat-card-subtitle>
             </mat-card-header>
@@ -28,7 +30,8 @@
 
             <mat-card-content>
                 <mat-accordion>
-                    <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel style="background: none;" 
+                                         hideToggle>
                       <mat-expansion-panel-header>
                         <mat-panel-title>
                           Description <mat-icon mat-list-item >unfold_more</mat-icon>
@@ -54,6 +57,7 @@
   <mat-paginator [length]="gatosList.length"
                  [pageSize]="pageSize"
                  [pageSizeOptions]=" pageSizeOptions"
-                 (page)="onPageActivated($event)">
+                 (page)="onPageActivated($event)"
+                 style="background: none;">
   </mat-paginator>
 </div>       

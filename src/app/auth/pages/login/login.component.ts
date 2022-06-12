@@ -1,40 +1,35 @@
-/*import { Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [`
-    .login{
+  styles: [
+    `
+    .mat-raised-button {
+      font-size: 16px;
+      text-transform: uppercase;
       width: 300px;
-      height: 320px;
-      border-radius: 5%;
+      height: 50px;
     }
-  `]
+    `
+  ]
 })
 export class LoginComponent {
 
+  miFormulario: FormGroup = this.fb.group({
+    name: ["", [Validators.required, Validators.minLength(3)]],
+    password: ["", [Validators.required, Validators.minLength(3)]]
+  })
 
   constructor( private router: Router,
-               private authService: AuthService ) { }
+               private fb: FormBuilder ) {}
+
 
   login() {
-    // verificar en la base que el usuario existe.
-    // guardar usuario en un servicio.
-    this.authService.login().subscribe( auth => {
-      console.log(auth)
-
-      if( auth.id ){
-        this.router.navigate(["./gatos/bienvenida"])
-      }
-    }) 
-    
+    console.log(this.miFormulario.value);
+    console.log(this.miFormulario.valid)
   }
 
-  noLogIn() {
-    this.authService.logout();
-    this.router.navigate(["./gatos/bienvenida"])
-  }
-
-}*/
+}

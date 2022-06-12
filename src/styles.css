@@ -13,3 +13,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     justify-content: center;
     align-items: center;
 }
+
+.main-component {
+    height: 100vh;
+    width: 100vw;
+}
+
+.auth-input {
+    width: 350px;
+}
+
+
+
